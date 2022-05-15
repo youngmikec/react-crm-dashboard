@@ -1,4 +1,5 @@
 import { setLocalStorageData } from "../../utils";
+import { useHistory } from 'react';
 
 const users_from_db = [
     {
@@ -25,6 +26,7 @@ export const loginUser = (email, password) => {
     const returnedUser = users_from_db.find(user => (user.email === email && user.password === password));
     if(returnedUser){
         setLocalStorageData('user', returnedUser);
+        window.history.pushState(null, '', '/home');
         return {
             status: 200,
             message: "User logged in successfully",
@@ -32,7 +34,7 @@ export const loginUser = (email, password) => {
     }
     
     return {
-        status: 400,
+        status: 403,
         message: "Incorrect Email or password",
     };
 }
