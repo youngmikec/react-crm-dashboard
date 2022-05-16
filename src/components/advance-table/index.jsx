@@ -13,7 +13,7 @@ const AdvancedTable = (props) => {
 
     return (
         <>
-            <div className="container pt-5">
+            <div className="container pt-2">
                 <div className="card">
                     {
                         title &&

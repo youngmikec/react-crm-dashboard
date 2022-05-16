@@ -8,7 +8,7 @@ import Team from '../pages/team';
 export const privateRoutes = [
     {
         path: '/',
-        name: 'Home',
+        name: 'Dashboard',
         component: Home
     },
     {

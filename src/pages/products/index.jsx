@@ -1,10 +1,11 @@
 import React from "react";
+import Layout from "../../components/layout";
 
-const Products = () => {
+const Products = ({auth}) => {
     return (
-        <div>
-            <h2>Welcome to Productss page</h2>
-        </div>
+        <Layout auth={auth}>
+            <h1>Welcome to Products</h1>
+        </Layout>
     )
 }
 

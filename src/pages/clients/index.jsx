@@ -4,6 +4,7 @@ import fetchDataFromApi from '../../services/api/handlers/api-handler';
 // components
 import AdvancedTable from '../../components/advance-table';
 import Layout from '../../components/layout';
+import Loader from '../../components/Loader';
 
 const Clients = ({auth}) => {
     const headers = [
@@ -38,7 +39,6 @@ const Clients = ({auth}) => {
             fetchDataFromApi('clients')
             
             .then(res => {
-                console.log(res.data.data);
                 const data = hydrateData(res.data.data);
                 setData(data);
                 setLoading(false);
@@ -55,7 +55,7 @@ const Clients = ({auth}) => {
 
     return (
         <Layout auth={auth}>  
-            { loading && 'Loading...'}
+            { loading && <Loader  height={"80vh"} />}
             { isError && error}
             {
                 data.length > 0 

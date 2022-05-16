@@ -29,19 +29,23 @@ const Sidebar = ({title, routes, auth}) => {
     return (
         <div className='sidebar'>
             <div className='sidebar-header'>
-                <div className='container-fluid'>
+                <div className='container-fluid p-4'>
                     <h6>{title || 'CRM Dashboard'}</h6>
                 </div>
             </div>
             <div className='sidebar-content'>
-                <SidebarLink active={false} title={'Dashboard'} iconClass="fa fa-th-large" />
-                <SidebarLink active={true} title={'Clients'} iconClass="fa fa-users"/>
-                <SidebarLink active={false} title={'Products'} iconClass="fa fa-archive" />
-                <SidebarLink active={false} title={'Team'} iconClass="fa fa-users"/>
+                <SidebarLink title={'Dashboard'} iconClass="fa fa-th-large" />
+                <SidebarLink title={'Clients'} iconClass="fa fa-users"/>
+                <SidebarLink title={'Products'} iconClass="fa fa-archive" />
+                <SidebarLink title={'Team'} iconClass="fa fa-users"/>
             </div>
+
             <div className='sidebar-footer'>
-                <div className='container-fluid'>
-                    <h6 onClick={() => onLogout()}>Logout</h6>
+                <div className={'d-flex my-2 px-3 py-3 my-nav-link'} onClick={() => onLogout()}>
+                    <span className='flex mx-1'>
+                        <i className="fa fa-logout" aria-hidden="true"></i>
+                    </span>
+                    <span className="flex">Logout</span>
                 </div>
             </div>
         </div>

@@ -41,7 +41,7 @@ export const loginUser = (email, password, callback) => {
 
 export const logoutUser = (callback) => {
     if(getLocalStorageData('user')){
-        setLocalStorageData('user', null);
+        localStorage.removeItem('user');
         callback(false);
         return {
             status: 200,
