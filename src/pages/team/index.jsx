@@ -5,11 +5,12 @@ import fetchDataFromApi from '../../services/api/handlers/api-handler';
 import AdvancedTable from '../../components/advance-table';
 import Layout from '../../components/layout';
 
-const Clients = ({auth}) => {
+const Team = ({auth}) => {
     const headers = [
         'ID',
-        'logo',
-        'name',
+        'user',
+        'firstname',
+        'lastname',
         'phone',
         'email',
         'country'
@@ -24,10 +25,11 @@ const Clients = ({auth}) => {
             return {
                 id: item.id,
                 user: item.image,
-                name: item.name,
+                firstname: item.firstname,
+                lastname: item.lastname,
                 phone: item.phone,
                 email: item.email,
-                country: item.country
+                country: item.address.country
             }
         })
     }
@@ -35,7 +37,7 @@ const Clients = ({auth}) => {
     useEffect(
         () => {
             setLoading(true);
-            fetchDataFromApi('clients')
+            fetchDataFromApi('members')
             
             .then(res => {
                 console.log(res.data.data);
@@ -61,7 +63,7 @@ const Clients = ({auth}) => {
                 data.length > 0 
                 ?
                     <AdvancedTable
-                        title={'Clients table'}
+                        title={'Team members table'}
                         headers={headers} 
                         data={data} 
                     />
@@ -72,4 +74,4 @@ const Clients = ({auth}) => {
     )
 }
 
-export default Clients;
+export default Team;

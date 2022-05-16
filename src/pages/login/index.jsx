@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import Alert from '../../components/Alert';
+import Toast from "../../components/Toast";
 import { loginUser } from "../../services/auth";
+import { useNavigate } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Login = () => {
+const Login = ({auth}) => {
     let [email, setEmail] = useState(null);
     let [password, setPassword] = useState(null);
+    const navigate = useNavigate();
 
     const handleChangeEvent = (value, name) => {
         switch(name){
@@ -22,12 +24,13 @@ const Login = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const {status, message} = loginUser(email, password);
+        const {status, message} = loginUser(email, password, auth.setAuthenticated);
         if(status === 403){
-            <Alert message={message} />
+            Toast(message, {type: 'error'});
             return;
         }
-        <Alert message={message} />
+        navigate('/');
+        Toast(message, {type: 'success'});
     } 
 
     return (
@@ -66,7 +69,7 @@ const Login = () => {
                             </div>
 
                             <div className="form-group text-center my-3">
-                                <button className="btn btn-primary btn-lg">Login</button>
+                                <button type="submit" className="btn btn-primary btn-lg">Login</button>
                             </div>
                         </form>
                     </div>
