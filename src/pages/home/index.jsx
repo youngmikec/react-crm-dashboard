@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import Layout from '../../components/layout';
+
 const Home = () => {
     return (
-        <div>
-            <h1>Home component</h1>
-        </div>
+        <Layout>
+            <h1>Welcome to CRM Dashboard</h1>
+        </Layout>
     )
 }
 

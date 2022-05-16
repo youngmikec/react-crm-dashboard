@@ -1,6 +1,8 @@
+// Application pages
 import Home from '../pages/home';
 import Login from '../pages/login';
 import Clients from '../pages/clients';
+import Products from '../pages/products';
 import Team from '../pages/team';
 
 export const privateRoutes = [
@@ -22,7 +24,12 @@ export const privateRoutes = [
     {
         path: '/products',
         name: 'Products',
-        component: Home
+        component: Products
+    },
+    {
+        path: '/team',
+        name: 'Team',
+        component: Team
     },
 ];
 

@@ -12,7 +12,7 @@ const Layout = ({children, auth}) => {
             <div className='col-md-2 col-sx-12'>
                 <Sidebar auth={auth} />
             </div>
-            <div className='col-md-10 col-sx-12'>
+            <div className='col-md-10 col-sm-9 col-sx-12'>
                 <Navbar />
                 {children}
                 <Footer />

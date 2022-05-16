@@ -14,8 +14,17 @@
     height: 15vh;
 }
 .sidebar-content{
+    position: absolute;
+    top: 16vh;
+    left: 0;
+    right: 0;
     overflow-y: scroll;
     height: calc(100vh - 30vh);
+}
+
+.active {
+    border-left: 3px solid white;
+    background-color: rgb(14, 14, 14);
 }
 
 .sidebar-footer{
