@@ -34,7 +34,6 @@ const Clients = () => {
         () => {
             setLoading(true);
             fetchDataFromApi('clients')
-            
             .then(res => {
                 const data = hydrateData(res.data.data);
                 setData(data);
