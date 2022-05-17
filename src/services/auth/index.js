@@ -18,7 +18,7 @@ const users_from_db = [
         id: 1,
         name: "habib",
         email: "habib@gmail.com",
-        password: "habib"
+        password: " "
     },
 ];
 
