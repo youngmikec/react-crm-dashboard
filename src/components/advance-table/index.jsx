@@ -3,14 +3,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const AdvancedTable = (props) => {
     const {title, headers, data } = props;
+
+    const renderData = (value = "", ind) => {
+        if((value+"").startsWith('http')){
+            return (<img src={`https://source.unsplash.com/random/200x200?sig=${ind}`} alt="user" className="img-fluid rounded-circle" width="35" height="35" />)
+        }
+        return value
+    }
+
     return (
         <>
-            <div className="container pt-5">
+            <div className="container pt-2">
                 <div className="card">
                     {
                         title &&
                         <div className="card-header">
-                            <h4 className="card-title">{ title }</h4>
+                            <h5 className="card-title">{ title }</h5>
                         </div>
                     }
                     <div className="card-body">
@@ -32,8 +40,8 @@ const AdvancedTable = (props) => {
                                         const values = Object.values(item);
                                         return <tr key={key}>
                                             {
-                                                values.map((value, key) => {
-                                                    return <td key={key}>{value}</td>
+                                                values.map((value, ind) => {
+                                                    return <td key={ind}>{renderData(value, key)}</td>
                                                 })
                                             }
                                         </tr>

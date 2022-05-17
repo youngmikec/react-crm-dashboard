@@ -8,13 +8,18 @@ import Team from '../pages/team';
 export const privateRoutes = [
     {
         path: '/',
-        name: 'Home',
+        name: 'Dashboard',
         component: Home
     },
     {
         path: '/clients',
         name: 'Clients',
         component: Clients
+    },
+    {
+        path: '/team',
+        name: 'Team',
+        component: Team
     },
     {
         path: '/products',
@@ -36,7 +41,7 @@ export const appRoutes = [
     },
     {
         path: '/auth/signup',
-        name: 'login',
+        name: 'signup',
         component: Login
     },
 ];
