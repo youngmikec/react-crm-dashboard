@@ -4,10 +4,12 @@ import fetchDataFromApi from '../../services/api/handlers/api-handler';
 // components
 import AdvancedTable from '../../components/advance-table';
 import Layout from '../../components/layout';
+import Loader from '../../components/Loader';
 
-const Clients = () => {
+const Clients = ({auth}) => {
     const headers = [
-        'id',
+        'ID',
+        'logo',
         'name',
         'phone',
         'email',
@@ -22,6 +24,7 @@ const Clients = () => {
         return data.map((item) => {
             return {
                 id: item.id,
+                user: item.image,
                 name: item.name,
                 phone: item.phone,
                 email: item.email,
@@ -51,8 +54,8 @@ const Clients = () => {
     
 
     return (
-        <Layout>  
-            { loading && 'Loading...'}
+        <Layout auth={auth}>  
+            { loading && <Loader  height={"80vh"} />}
             { isError && error}
             {
                 data.length > 0 

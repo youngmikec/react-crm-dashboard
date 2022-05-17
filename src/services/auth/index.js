@@ -1,5 +1,4 @@
-import { setLocalStorageData } from "../../utils";
-import { useHistory } from 'react';
+import { getLocalStorageData, setLocalStorageData } from "../../utils";
 
 const users_from_db = [
     {
@@ -22,11 +21,11 @@ const users_from_db = [
     },
 ];
 
-export const loginUser = (email, password) => {
+export const loginUser = (email, password, callback) => {
     const returnedUser = users_from_db.find(user => (user.email === email && user.password === password));
     if(returnedUser){
         setLocalStorageData('user', returnedUser);
-        window.history.pushState(null, '', '/home');
+        callback(true);
         return {
             status: 200,
             message: "User logged in successfully",
@@ -39,3 +38,18 @@ export const loginUser = (email, password) => {
     };
 }
 
+
+export const logoutUser = (callback) => {
+    if(getLocalStorageData('user')){
+        localStorage.removeItem('user');
+        callback(false);
+        return {
+            status: 200,
+            message: "User logged out successfully",
+        };
+    }
+    return {
+        status: 403,
+        message: "User not logged in",
+    }
+}

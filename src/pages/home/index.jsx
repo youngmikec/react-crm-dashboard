@@ -1,9 +1,9 @@
 import React from 'react';
 import Layout from '../../components/layout';
 
-const Home = () => {
+const Home = ({auth}) => {
     return (
-        <Layout>
+        <Layout auth={auth}>
             <h1>Welcome to CRM Dashboard</h1>
         </Layout>
     )
