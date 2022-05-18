@@ -19,6 +19,13 @@ const users_from_db = [
         email: "habib@gmail.com",
         password: "habib"
     },
+    {
+        id: 1,
+        name: "habib",
+        email: "emmy@gmail.com",
+        password: "emmy"
+    },
+
 ];
 
 export const loginUser = (email, password, callback) => {
