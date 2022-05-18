@@ -1,10 +1,11 @@
 import React from 'react';
 import Layout from '../../components/layout';
+import Mainboard from './mainboard';
 
-const Home = () => {
+const Home = ({auth}) => {
     return (
-        <Layout>
-            <h1>Welcome to CRM Dashboard</h1>
+        <Layout auth={auth}>
+            <Mainboard />
         </Layout>
     )
 }
