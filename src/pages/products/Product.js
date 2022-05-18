@@ -5,7 +5,7 @@ const Product = (props) => {
             className="col-md-4 col-lg-3 col-xs-12 col-sm-6 mb-3 mt-5"
         >
             <div className="card">
-                <img className="card-img-top" src={item.product_image} alt="the image alt text here" />
+                <img className="card-img-top" src={item.product_image} alt="product" />
                 <div className="card-body text-center">
                     <h5 className="card-title">{item.product_name}</h5>
                     <hr />

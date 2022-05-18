@@ -2,18 +2,10 @@ import React, { useState, useEffect } from "react";
 import fetchDataFromApi from "../../services/api/handlers/api-handler";
 
 // components
-import AdvancedTable from "../../components/advance-table";
 import Layout from "../../components/layout";
 import Product from "./Product";
 
 const Products = () => {
-  const headers = [
-    "product_name",
-    "product_image",
-    "net_price",
-    "taxes",
-    "price",
-  ];
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [isError, setIsError] = useState(false);
