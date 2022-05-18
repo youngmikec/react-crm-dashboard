@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from 'react-toastify';
 
 import { privateRoutes } from "../../routes";
 import { logoutUser } from "../../services/auth";
@@ -19,15 +18,6 @@ const Navbar = ({auth}) => {
             navigate('/auth/login');
             Toast(message.message, {type: 'success'});
         }
-        toast.success(message, {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
     }
 
     useEffect(

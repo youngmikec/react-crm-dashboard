@@ -12,10 +12,10 @@ const Products = () => {
   const [error, setError] = useState("");
 
   const hydrateData = (data) => {
-    return data.map((item) => {
+    return data.map((item, ind) => {
       return {
         product_name: item.name,
-        product_image: item.image,
+        product_image: ind+"",
         net_price: item.net_price,
         taxes: item.taxes,
         price: item.price,
