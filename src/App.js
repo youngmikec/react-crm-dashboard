@@ -5,6 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 //Routes
 import {appRoutes, privateRoutes} from './routes';
 
+// login page
+import Login from './pages/login';
+
 import './App.css';
 import { isAuthenticated } from './utils';
 import { ToastContainer } from 'react-toastify';
@@ -41,7 +44,7 @@ function App() {
             getRoutes(appRoutes)
           )
         }
-        <Route exact path="*" element={<h1>Page not available</h1>} />
+        <Route exact path="*" element={<Login auth={{ authenticated, setAuthenticated }} />} />
       </Routes>
     </Router>
   );
