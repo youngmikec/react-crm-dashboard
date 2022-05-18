@@ -22,6 +22,13 @@ const users_from_db = [
         password: "habib",
         avatar: "https://source.unsplash.com/random/200x200?sig=6"
     },
+    {
+        id: 1,
+        name: "habib",
+        email: "emmy@gmail.com",
+        password: "emmy"
+    },
+
 ];
 
 export const loginUser = (email, password, callback) => {
