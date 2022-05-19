@@ -46,3 +46,10 @@
     background-color: rgb(14, 14, 14);
     color: rgb(248, 248, 248);
 }
+
+@media (min-width: 768px) {
+    .my-side {
+        position: fixed;
+        z-index: 99;
+    }
+}
